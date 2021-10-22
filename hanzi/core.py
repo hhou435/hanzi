@@ -1,10 +1,11 @@
 import json
+import pkg_resources
 
 
 class Hanzi(object):
     def __init__(self):
-        data_file = open("data/data.json", 'r', encoding='utf-8')
-        self.data = json.load(data_file)
+        data_file = pkg_resources.resource_filename(__name__, "data/data.json")
+        self.data = json.load(open(data_file, 'r', encoding='utf-8'))
 
     def get_full_infomation(self, input_char):
         if input_char in self.data:
