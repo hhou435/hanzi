@@ -3,7 +3,7 @@ import json
 
 class Hanzi(object):
     def __init__(self):
-        data_file = open("../data/data.json", 'r', encoding='utf-8')
+        data_file = open("data/data.json", 'r', encoding='utf-8')
         self.data = json.load(data_file)
 
     def get_full_infomation(self, input_char):
